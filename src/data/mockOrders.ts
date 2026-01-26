@@ -1,0 +1,78 @@
+import { Order } from '@/types';
+import { mockProducts } from './mockProducts';
+
+export const mockOrders: Order[] = [
+  {
+    _id: 'ord-001',
+    userId: '1',
+    items: [
+      { product: mockProducts[0], quantity: 1, price: 199.99 },
+      { product: mockProducts[3], quantity: 2, price: 24.99 },
+    ],
+    shippingAddress: {
+      fullName: 'John Doe',
+      address: '123 Main Street',
+      city: 'New York',
+      postalCode: '10001',
+      country: 'USA',
+      phone: '+1 234 567 8900',
+    },
+    paymentMethod: 'card',
+    paymentStatus: 'paid',
+    orderStatus: 'delivered',
+    subtotal: 249.97,
+    shippingCost: 10.00,
+    tax: 22.50,
+    totalAmount: 282.47,
+    createdAt: '2024-01-20T14:30:00Z',
+    updatedAt: '2024-01-25T10:00:00Z',
+  },
+  {
+    _id: 'ord-002',
+    userId: '1',
+    items: [
+      { product: mockProducts[1], quantity: 1, price: 349.99 },
+    ],
+    shippingAddress: {
+      fullName: 'John Doe',
+      address: '123 Main Street',
+      city: 'New York',
+      postalCode: '10001',
+      country: 'USA',
+      phone: '+1 234 567 8900',
+    },
+    paymentMethod: 'card',
+    paymentStatus: 'paid',
+    orderStatus: 'shipped',
+    subtotal: 349.99,
+    shippingCost: 0,
+    tax: 31.50,
+    totalAmount: 381.49,
+    createdAt: '2024-01-22T09:15:00Z',
+    updatedAt: '2024-01-23T16:00:00Z',
+  },
+  {
+    _id: 'ord-003',
+    userId: '1',
+    items: [
+      { product: mockProducts[5], quantity: 1, price: 89.99 },
+    ],
+    shippingAddress: {
+      fullName: 'John Doe',
+      address: '123 Main Street',
+      city: 'New York',
+      postalCode: '10001',
+      country: 'USA',
+      phone: '+1 234 567 8900',
+    },
+    paymentMethod: 'card',
+    paymentStatus: 'paid',
+    orderStatus: 'delivered',
+    subtotal: 89.99,
+    shippingCost: 0,
+    tax: 8.10,
+    totalAmount: 98.09,
+    createdAt: '2024-01-18T11:45:00Z',
+    updatedAt: '2024-01-18T11:45:00Z',
+  },
+];
