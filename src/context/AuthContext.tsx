@@ -11,6 +11,7 @@ interface AuthContextType {
   login: (credentials: LoginCredentials) => Promise<void>;
   register: (data: RegisterCredentials) => Promise<void>;
   logout: () => void;
+  updateUser: (data: Partial<User>) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -89,6 +90,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const updateUser = async (data: Partial<User>) => {
+    try {
+      const updatedUser = await authService.updateProfile(data);
+      setUser(updatedUser);
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+    } catch (error: any) {
+      throw error;
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -99,6 +110,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         login,
         register,
         logout,
+        updateUser,
       }}
     >
       {children}
