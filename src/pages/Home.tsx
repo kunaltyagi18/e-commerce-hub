@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import ProductCard from '@/components/product/ProductCard';
 import ProductCardSkeleton from '@/components/product/ProductCardSkeleton';
+import HeroCarousel from '@/components/home/HeroCarousel';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -43,62 +44,8 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative hero-gradient">
-        <div className="container section-padding">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary">
-                <Sparkles className="h-4 w-4" />
-                New Collection 2024
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                Elevate Your
-                <span className="block text-primary">Lifestyle</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
-                Discover curated collections of premium products designed for the modern lifestyle. Quality meets style.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="btn-gradient text-lg px-8 py-6" asChild>
-                  <Link to="/products">
-                    Shop Collection
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
-                  <Link to="/products?category=Electronics">Explore Categories</Link>
-                </Button>
-              </div>
-              <div className="flex items-center gap-8 pt-4">
-                <div>
-                  <p className="text-3xl font-bold">50K+</p>
-                  <p className="text-sm text-muted-foreground">Happy Customers</p>
-                </div>
-                <div className="h-12 w-px bg-border" />
-                <div>
-                  <p className="text-3xl font-bold">4.9</p>
-                  <p className="text-sm text-muted-foreground">Average Rating</p>
-                </div>
-                <div className="h-12 w-px bg-border" />
-                <div>
-                  <p className="text-3xl font-bold">200+</p>
-                  <p className="text-sm text-muted-foreground">Premium Brands</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative hidden lg:block">
-              <div className="absolute -top-8 -right-8 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/30 rounded-full blur-2xl" />
-              <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=700&fit=crop"
-                alt="Shopping"
-                className="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[500px]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       {/* Features Bar */}
       <section className="border-y bg-card">
